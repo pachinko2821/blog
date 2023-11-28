@@ -78,7 +78,7 @@ paginate = 5
         endLevel = 1
 
     [languages.en.params.logo]
-      logoText = "Just some Hacks"
+      logoText = "Catchy Title Here"
       logoHomeLink = "/"
 
     [languages.en.menu]
