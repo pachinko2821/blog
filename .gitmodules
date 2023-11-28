@@ -1,6 +1,6 @@
 [submodule "iampachinko/public"]
 	path = iampachinko/public
-	url = https://github.com/pachinko2821/pachinko2821.github.io.git
+	url = git@github.com:pachinko2821/pachinko2821.github.io.git 
 
 [submodule "iampachinko/themes/terminal"]
 	path = iampachinko/themes/terminal
