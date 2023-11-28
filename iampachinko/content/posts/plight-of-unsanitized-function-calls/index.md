@@ -3,7 +3,7 @@ title = "The Plight of Unsanitized Function Calls"
 date = "2023-10-22T21:28:41+05:30"
 author = "Prajyot Chemburkar"
 cover = "https://imgs.xkcd.com/comics/exploits_of_a_mom.png"
-tags = ["Electron", "openExternal", "RCE"]
+tags = ["Electron", "CVE", "RCE"]
 keywords = ["electron", "code execution"]
 description = "Been researching electron app security recently, decided to look at Tutanota. Got an RCE"
 showFullContent = false
@@ -63,7 +63,6 @@ private onNewWindow(details: HandlerDetails): { action: "deny" } {
 Looks like the devs are sort of aware of what `shell.openExternal` can do, hence the blocked `file:` scheme. But there are way too many other schemes that we can use to abuse this.
 
 # Using FTP to gain RCE
-
 Execute and authenticate to the Tutanota desktop version `3.118.8` AppImage on a Ubuntu Desktop with the XFCE environment.
 ![tuta-install](images/tuta-install.png)
 
@@ -79,6 +78,11 @@ Send an email to the email account logged in on tutanota containing a hyperlink 
 
 On the tutanota desktop application, click on the hyperlink in the email received. Observe that the calculator application opens. You may need to confirm execution of the application in some cases.
 ![tuta-rce](images/tuta-rce.png)
+
+# The Fix Deployed
+Tutanota decided to fix the issue by adding a warning/confirmation dialouge before opening any links that are not http/https. This seemed like a good fix to me, as:
+- It is confirmed that the user actually wants to open said link.
+- It does not affect the use of legitimate deeplinks.
 
 # Timeline
 - September 26th 2023, 7:20 AM UTC, Reported to Tutanota
