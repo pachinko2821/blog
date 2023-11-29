@@ -6,7 +6,7 @@ TOC = false
 +++
 
 # All you need to know
-- Presently working with the [Web Security](https://payatu.com/web-security-testing/) team at Payatu Security Consulting. Involves securing client applications, and some opensource research. The usual stuff.
+- Presently working with the [Web Security](https://payatu.com/web-security-testing/) team at Payatu Security Consulting. Involves securing client applications, and some open-source research.
 - Currently have 1 year of experience with information security.
 
 # Certifications
